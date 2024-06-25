@@ -5,9 +5,17 @@ name: Events Test
 on: 
     pull_request:
         types: 
-            - opened
+        - opened
+        branches:
+        - main
+        - 'dev*'
     workflow_dispatch:
-
+    push:
+        branches:
+        - main
+        - 'dev*'
+        paths-ignore:
+        - '.github/workflows/*'
 
 jobs:
     deploy:
